@@ -45,7 +45,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@activity('check and Get data').output.Mumbai.txt",
+						"value": "@activity('check and Get data').output.exists",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
@@ -95,6 +95,7 @@
 								},
 								"sink": {
 									"type": "AzureSqlSink",
+									"preCopyScript": "delete from Goa",
 									"writeBehavior": "insert",
 									"sqlWriterUseTableLock": false,
 									"tableOption": "autoCreate",
@@ -105,6 +106,11 @@
 									"type": "TabularTranslator",
 									"mappings": [
 										{
+											"source": {
+												"name": "EID",
+												"type": "String",
+												"physicalType": "String"
+											},
 											"sink": {
 												"name": "EID",
 												"type": "String",
@@ -112,6 +118,11 @@
 											}
 										},
 										{
+											"source": {
+												"name": "EName",
+												"type": "String",
+												"physicalType": "String"
+											},
 											"sink": {
 												"name": "EName",
 												"type": "String",
@@ -119,6 +130,11 @@
 											}
 										},
 										{
+											"source": {
+												"name": "Esalary",
+												"type": "String",
+												"physicalType": "String"
+											},
 											"sink": {
 												"name": "Esalary",
 												"type": "String",
@@ -126,6 +142,11 @@
 											}
 										},
 										{
+											"source": {
+												"name": "Addres",
+												"type": "String",
+												"physicalType": "String"
+											},
 											"sink": {
 												"name": "Addres",
 												"type": "String",
