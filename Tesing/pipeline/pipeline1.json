@@ -20,7 +20,7 @@
 						"type": "DatasetReference"
 					},
 					"fieldList": [
-						"exists"
+						"itemName"
 					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
@@ -45,7 +45,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@activity('check and Get data').output.exists",
+						"value": "@activity('check and Get data').output.itemName",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
@@ -86,7 +86,7 @@
 									"storeSettings": {
 										"type": "AzureBlobStorageReadSettings",
 										"recursive": true,
-										"wildcardFileName": "*",
+										"wildcardFileName": "*csv",
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
@@ -105,11 +105,6 @@
 									"type": "TabularTranslator",
 									"mappings": [
 										{
-											"source": {
-												"name": "EID",
-												"type": "String",
-												"physicalType": "String"
-											},
 											"sink": {
 												"name": "EID",
 												"type": "String",
@@ -117,11 +112,6 @@
 											}
 										},
 										{
-											"source": {
-												"name": "EName",
-												"type": "String",
-												"physicalType": "String"
-											},
 											"sink": {
 												"name": "EName",
 												"type": "String",
@@ -129,11 +119,6 @@
 											}
 										},
 										{
-											"source": {
-												"name": "Esalary",
-												"type": "String",
-												"physicalType": "String"
-											},
 											"sink": {
 												"name": "Esalary",
 												"type": "String",
@@ -141,11 +126,6 @@
 											}
 										},
 										{
-											"source": {
-												"name": "Addres",
-												"type": "String",
-												"physicalType": "String"
-											},
 											"sink": {
 												"name": "Addres",
 												"type": "String",
